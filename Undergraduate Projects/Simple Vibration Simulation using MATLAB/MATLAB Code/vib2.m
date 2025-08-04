@@ -1,0 +1,23 @@
+format long;
+% parameter SI unit
+m=2;%kg
+k=10000;%N/m
+c=10;% N-s/m
+f=400; % N
+w=0;
+n=1;
+for w=0.1:1:100
+tt=0.01;
+t=150;
+sim1=sim('vib_sim1');
+x=simout1;
+y=simout2;
+yy(n,1)=w;
+yy(n,2)=max(abs(y));
+
+n=n+1;
+end
+plot(yy(:,1),yy(:,2),'o')
+
+
+
