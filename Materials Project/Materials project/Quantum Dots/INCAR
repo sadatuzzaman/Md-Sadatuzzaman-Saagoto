@@ -1,0 +1,9 @@
+SYSTEM = Quantum Dot
+ENCUT = 520
+ISMEAR = 0
+SIGMA = 0.1
+IBRION = 2
+ISIF = 3
+NSW = 50
+EDIFF = 1e-06
+PREC = Accurate

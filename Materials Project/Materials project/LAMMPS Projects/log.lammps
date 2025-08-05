@@ -1,0 +1,74 @@
+LAMMPS (10 Mar 2021)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:94)
+  using 1 OpenMP thread(s) per MPI task
+units lj
+atom_style atomic
+lattice fcc 0.8442
+Lattice spacing in x,y,z = 1.6795962 1.6795962 1.6795962
+region box block 0 10 0 10 0 10
+create_box 2 box
+Created orthogonal box = (0.0000000 0.0000000 0.0000000) to (16.795962 16.795962 16.795962)
+  1 by 1 by 1 MPI processor grid
+create_atoms 1 box
+Created 4000 atoms
+  create_atoms CPU = 0.000 seconds
+mass 1 1.0
+mass 2 2.0
+pair_style lj/cut 2.5
+pair_coeff 1 1 1.0 1.0
+pair_coeff 2 2 1.0 1.0
+dump 1 all custom 100 dump id type x y z
+minimize 1e-4 1e-6 100 1000
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (src/min.cpp:188)
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 2.8
+  ghost atom cutoff = 2.8
+  binsize = 1.4, bins = 12 12 12
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut, perpetual
+      attributes: half, newton on
+      pair build: half/bin/atomonly/newton
+      stencil: half/bin/3d/newton
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 6.250 | 6.250 | 6.250 Mbytes
+Step Temp E_pair E_mol TotEng Press 
+       0            0   -6.7733681            0   -6.7733681   -6.2353173 
+       1            0   -6.7733681            0   -6.7733681   -6.2353173 
+Loop time of 0.00597692 on 1 procs for 1 steps with 4000 atoms
+
+261.4% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+Minimization stats:
+  Stopping criterion = energy tolerance
+  Energy initial, next-to-last, final = 
+     -6.77336805325925  -6.77336805325925  -6.77336805325925
+  Force two-norm initial, final = 3.9339815e-12 2.5997884e-12
+  Force max component initial, final = 9.7921671e-14 5.7287508e-14
+  Final line search alpha, max atom move = 1.0000000 5.7287508e-14
+  Iterations, force evaluations = 1 2
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.0059769  | 0.0059769  | 0.0059769  |   0.0 |100.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 0          |            |       |  0.00
+
+Nlocal:        4000.00 ave        4000 max        4000 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:        5841.00 ave        5841 max        5841 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:        156000.0 ave      156000 max      156000 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 156000
+Ave neighs/atom = 39.000000
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:05:35
+7:26

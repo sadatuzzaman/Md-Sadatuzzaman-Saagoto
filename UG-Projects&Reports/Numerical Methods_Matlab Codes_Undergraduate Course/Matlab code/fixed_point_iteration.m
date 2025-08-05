@@ -1,17 +1,3 @@
-clear
-clear all
-clc
-f=input('insert the function for which you want to know the root:');
-g=@(x)f(x)+x;
-error_limit=input('give your error limit value in %:');
-max_iteration=input('give the maximum iteration value:');
-iter = 0;
-xp=input('insert the first guess of the root, xp:');
-while (1)
-iter=iter+1;
-xpold = xp;
-xp = g(xpold);
-error = abs((xp - xpold)/xp) * 100;
-if error <= error_limit || iter >= max_iteration,break,end
-end
-fprintf('The root is %f',xp)
+version https://git-lfs.github.com/spec/v1
+oid sha256:d8a1cf2da99fca7a5ff1adb2277c7b60e678ecafbe1a4b9a4b8281c6186a76d3
+size 473

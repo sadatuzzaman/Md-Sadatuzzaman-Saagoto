@@ -1,6 +1,3 @@
-x=0:0.1:4;
-y=(4/1.3)*(exp(0.8*x)-exp(-0.5*x))+2*(exp(-0.5*x));
-plot(x,y,'g')%green color
-xlabel('x')
-ylabel('y')
-hold on
+version https://git-lfs.github.com/spec/v1
+oid sha256:8e06bfa68678d51fc8c3c8e8e1a5e58b6d2da4de992dd3fe19780d75617d183e
+size 125

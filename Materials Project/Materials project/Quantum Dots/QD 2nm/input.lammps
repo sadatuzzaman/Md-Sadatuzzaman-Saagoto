@@ -1,0 +1,25 @@
+# LAMMPS Input Script for Quantum Dot Simulation
+
+units metal
+dimension 3
+boundary p p p
+atom_style atomic
+
+# Read in the data file
+read_data lammps.data
+
+# Define the potential
+pair_style tersoff
+pair_coeff * * si.tersoff Si
+
+# Define simulation settings
+neighbor 2.0 bin
+neigh_modify every 1 delay 0 check yes
+
+# Define the minimization
+minimize 1e-4 1e-6 100 1000
+
+# Run the molecular dynamics simulation
+thermo 100
+timestep 0.001
+run 10000

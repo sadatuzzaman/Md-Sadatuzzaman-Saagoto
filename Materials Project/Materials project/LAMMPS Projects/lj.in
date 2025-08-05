@@ -1,0 +1,41 @@
+# LAMMPS Input Script for a Simple Lennard-Jones Fluid Simulation
+# Save this script as lj_fluid_sim.in
+
+# Initialize simulation box, atoms, and potentials
+units       lj
+atom_style  atomic
+
+# Define the simulation region and create a box
+lattice     fcc 0.8442
+region      box block 0 10 0 10 0 10
+create_box  1 box
+
+# Create atoms within the box
+create_atoms 1 box
+
+# Set the mass for atom type 1
+mass        1 1.0
+
+# Define the pair interaction style (Lennard-Jones potential) and coefficients
+pair_style  lj/cut 2.5
+pair_coeff  1 1 1.0 1.0 2.5
+
+# Define neighbor list settings (optional but recommended for efficiency)
+neighbor    0.3 bin
+neigh_modify delay 5
+
+# Define initial velocity of atoms
+velocity    all create 1.44 87287 loop geom
+
+# Define output settings
+# This command creates a dump file 'lj_fluid_sim.dump' every 100 timesteps
+dump        1 all atom 100 lj_fluid_sim.dump
+dump_modify 1 scale no
+
+# Set thermodynamic output
+thermo      100
+
+# Run the simulation
+run         1000
+
+# End of script

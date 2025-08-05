@@ -1,0 +1,24 @@
+LAMMPS (10 Mar 2021)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:94)
+  using 1 OpenMP thread(s) per MPI task
+# LAMMPS Input Script for Vacancy Creation and MD Simulation
+
+# Initialization
+units metal
+dimension 3
+boundary p p p
+atom_style atomic
+
+# Read the initial structure with potential vacancies
+read_data structure.lmp
+Reading data file ...
+  orthogonal box = (0.0000000 0.0000000 0.0000000) to (4.1900000 4.1900000 29.930000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  3 atoms
+  read_data CPU = 0.000 seconds
+
+# Define potential
+pair_style eam/alloy
+pair_coeff * * your_potential_file Bi Se
+ERROR on proc 0: cannot open eam/alloy potential file your_potential_file (src/potential_file_reader.cpp:62)

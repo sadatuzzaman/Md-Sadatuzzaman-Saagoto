@@ -1,24 +1,3 @@
-f= @(h)(3-h)*h^2-3.2
-r = 1;
-d = 2*r;
-hl= 0;
-hu= d;
-error_lim= 0.1;
-max_iter= 1500;
-iter = 0; saagoto = hl;
-while (1)
-iter=iter+1;
-saagoto_old = saagoto;
-saagoto = (hl + hu)/2;
-error = abs((saagoto - saagoto_old)/saagoto) * 100;
-test = f(hl)*f(saagoto);
-if test < 0
-hu = saagoto; 
-elseif test > 0
-hl = saagoto;
-else
-error = 0;
-end
-if error <= error_lim || iter >= max_iter,break,end
-end
-fprintf('The root is %f',saagoto)
+version https://git-lfs.github.com/spec/v1
+oid sha256:308cff42a95d1f2244c126bc928f6fefd0f41ac52210d83977a918db550da2ed
+size 442

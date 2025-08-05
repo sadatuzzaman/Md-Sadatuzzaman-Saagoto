@@ -1,11 +1,3 @@
-h=0.25; %step size
-xfinal=4; %solve from x=[0,xfinal]
-x(1)=0;y(1)=1; %initial condition 
-f=@(x,y)y*x^2-1.1*y; %given function
-for i=1:ceil(xfinal/h)
-    x(i+1)=x(i)+h;
-    y(i+1)=y(i)+f(x(i),y(i))*h;
-end
-plot(x,y,'r')%red color
-hold on
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:70bade2533847adb3dc11dc6023f001f96fde96f24437d76a77db2f1f8680e82
+size 248

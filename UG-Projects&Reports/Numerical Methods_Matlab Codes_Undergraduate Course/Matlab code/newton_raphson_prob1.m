@@ -1,15 +1,3 @@
-syms x 
-f =@(x) ;
-df= @(x) ;
-xr=; %first assumption of root
-error_lim= ;
-max_iter= ;
-iter = 0;
-while(1)
-    iter=iter+1;
-    xr_old = xr;
-    xr= xr_old - f(xr_old)/df(xr_old);
-    error = abs((xr - xr_old)/xr) * 100;
-if error <= error_lim || iter >= max_iter,break,end
-end
-fprintf('The root is: %f',xr)
+version https://git-lfs.github.com/spec/v1
+oid sha256:dface94854f7fa71f48912afa0a0e3ef9b3f08d28ed6ca81870d22130e65cd6b
+size 317

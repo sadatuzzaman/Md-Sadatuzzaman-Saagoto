@@ -1,6 +1,3 @@
-cd = 0.25; g = 9.81; v = 36; t=4;
-mp = linspace(50,200,16);
-fp = sqrt(g*mp/cd).*tanh(sqrt(g*cd./mp)*t)-v;
-plot(mp,fp), grid
-
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:aed8a33a911b2a118aa11fc1b8f336ec48c8245e8006413d9ca369013bf17ff3
+size 132

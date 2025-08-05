@@ -1,0 +1,36 @@
+# LAMMPS Input Script for Vacancy Creation and MD Simulation
+
+# Initialization
+units metal
+dimension 3
+boundary p p p
+atom_style atomic
+
+# Read the initial structure with potential vacancies
+read_data structure.lmp
+
+# Define potential
+pair_style eam/alloy
+pair_coeff * * your_potential_file Bi Se
+
+# Define regions for vacancy creation
+# (Customize the region or specific IDs as needed)
+region vacancy_region block 0 10 0 10 0 10 units box
+delete_atoms region vacancy_region
+
+# Define settings for MD simulation
+thermo 100
+thermo_style custom step temp pe etotal press vol
+
+# Create an NVT ensemble (constant Number of particles, Volume, Temperature)
+fix 1 all nvt temp 300 300 100
+
+# Define the timestep and run the simulation
+timestep 0.001  # in picoseconds
+run 10000       # number of timesteps
+
+# Dump atom positions and velocities for analysis
+dump 1 all custom 100 dump.vacancy id type x y z vx vy vz
+
+# Dump thermodynamic data
+thermo_style custom step temp etotal press volume

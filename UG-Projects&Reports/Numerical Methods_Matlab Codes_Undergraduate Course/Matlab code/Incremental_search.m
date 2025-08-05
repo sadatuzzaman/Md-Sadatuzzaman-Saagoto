@@ -1,12 +1,3 @@
-f=input('give the input function. example:to give f(x)=2x+5, write this way: @(x)2*x-5 \n')
-xmax=input('give the value of xmax\n')
-xmin=input('give the value of xmin \n')
-n=input('give the value of number of division n \n')
-x=linspace(xmin,xmax,n);
-y=f(x);
-fprintf('There must be a root in between the two column values of x \n')
-for k=1:length(x)-1
-    if sign(y(k))~=sign(y(k+1))
-        fprintf('%f          %f \n',[x(k);x(k+1)])
-    end
-end
+version https://git-lfs.github.com/spec/v1
+oid sha256:763b62ac311ac9d8dddab518b80a8a2d557b6ae20369afb1c3d89f171be05f08
+size 444

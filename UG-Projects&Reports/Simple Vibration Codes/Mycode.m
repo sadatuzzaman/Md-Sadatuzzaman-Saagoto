@@ -1,22 +1,3 @@
-format long;
-% parameter SI unit
-m=5.7;%kg
-k=1140;%N/m
-c=20.7;% N-s/m
-f=500; % N
-w=0;
-n=1;
-for w=0.1:1:100
-tt=0.01;
-t=150;
-sim1=sim('vib_sim1');
-x=simout1;
-y=simout2;
-yy(n,1)=w;
-yy(n,2)=max(abs(y));
-
-n=n+1;
-end
-plot(yy(:,1),yy(:,2),'o')
-
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:ed384483c6b37a11c1dd70172546d02b24839216d1714e11dbad9bc9f38d16d0
+size 261

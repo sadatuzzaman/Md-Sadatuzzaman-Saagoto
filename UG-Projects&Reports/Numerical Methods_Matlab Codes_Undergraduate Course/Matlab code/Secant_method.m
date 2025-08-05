@@ -1,16 +1,3 @@
-
-f=input('Insert the function for which you want to know root:');
-x1=input('Give lower limit x1:');
-x2=input('Give upper limit x2:');
-error_limit=input('Give your error limit value:');
-max_iteration=input('Give the maximum iteration value:');
-iter =0;xs=x2;
-while (1)
-iter=iter+1;
-xs_old = xs;
-xs = x2 - ((f(x2)*(x2-x1))/(f(x2)-f(x1)));
-error = abs((xs - xs_old)/xs) * 100;
-if error <= error_limit || iter >= max_iteration,break,end
-x1=x2; x2=xs;
-end
-fprintf('The root is %f',xs)
+version https://git-lfs.github.com/spec/v1
+oid sha256:902ca466328ffee9f60d95930ff1dbe30cc7977b604bc2b31b301682b473adb0
+size 496
