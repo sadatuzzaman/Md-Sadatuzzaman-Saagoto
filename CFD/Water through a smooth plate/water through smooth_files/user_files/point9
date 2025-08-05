@@ -1,0 +1,6 @@
+(title "Static Temperature")
+(labels "Position" "Static Temperature")
+
+((xy/key/label "point-9")
+0.0015	300.139
+)
